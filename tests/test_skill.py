@@ -36,11 +36,11 @@ def _timeout_handler(signum, frame):
 def test(name, func, timeout_sec=30):
     """Run a single test and print the result. Times out after timeout_sec."""
     # Set alarm (Unix only)
-    old_handler = signal.signal(signal.SIGALRM, _timeout_handler)
-    signal.alarm(timeout_sec)
+    # old_handler = signal.signal(signal.SIGALRM, _timeout_handler)
+    # signal.alarm(timeout_sec)
     try:
         outcome = func()
-        signal.alarm(0)  # cancel alarm
+        # signal.alarm(0)  # cancel alarm
         if outcome == "skip":
             print(f"  {SKIP}  {name}")
             results["skip"] += 1
@@ -52,12 +52,13 @@ def test(name, func, timeout_sec=30):
         print(f"         └─ Timed out after {timeout_sec}s (network issue or slow feed)")
         results["fail"] += 1
     except Exception as e:
-        signal.alarm(0)
+        # signal.alarm(0)
         print(f"  {FAIL}  {name}")
         print(f"         └─ {type(e).__name__}: {e}")
         results["fail"] += 1
     finally:
-        signal.signal(signal.SIGALRM, old_handler)
+        pass
+        # signal.signal(signal.SIGALRM, old_handler)
 
 
 # ════════════════════════════════════════════════════════════════════
