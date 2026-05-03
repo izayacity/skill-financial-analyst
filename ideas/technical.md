@@ -292,39 +292,39 @@ Centered at: 0.9; Encourages: Declining sell pressure.
 S13 = σ(−4(V(trend) − 0.9))
 
 ## III. Multifactor technical reversal detection model
-### structure
-Momentum Layer
+### 3.1 structure
+#### 3.1.1 Momentum Layer
 RSI spreads:
-S1 — RSI24 strength
-S2 — RSI24 − RSI6 spread
-S3 — RSI12 − RSI6 spread
+- S1 — RSI24 strength
+- S2 — RSI24 − RSI6 spread
+- S3 — RSI12 − RSI6 spread
 
-Timing Layer
+#### 3.1.2 Timing Layer
 RSI slopes + reversal:
-S4 — RSI6 slope
-S5 — RSI12 slope
-S6 — Reversal confirmation
+- S4 — RSI6 slope
+- S5 — RSI12 slope
+- S6 — Reversal confirmation
 
-Acceleration Layer
+#### 3.1.3 Acceleration Layer
 RSI curvature:
-S7 — RSI6 curvature
+- S7 — RSI6 curvature
 
-Structure Layer
+#### 3.1.4 Structure Layer
 MA + support:
-S8 — MA50 distance
-S9 — Support distance
+- S8 — MA50 distance
+- S9 — Support distance
 
-Volatility Layer
+#### 3.1.5 Volatility Layer
 ATR depth + regime:
-S10 — ATR-normalized pullback
-S11 — Volatility regime
+- S10 — ATR-normalized pullback
+- S11 — Volatility regime
 
-Volume Participation Layer
+#### 3.1.6 Volume Participation Layer
 Volume signals:
-S12 — Relative volume spike
-S13 — Volume divergence
+- S12 — Relative volume spike
+- S13 — Volume divergence
 
-### Weight Distribution
+### 3.2 Weight Distribution
 Score = 0.17 * S1 + 0.14 * S2 + 0.08 * S3 + 0.10 * S4 +0.06 * S5 + 0.05 * S6 + 0.06 * S7 + 
 0.08 * S8 + 0.05 * S9 + 0.07 * S10 + 0.05 * S11 + 0.05 * S12 + 0.04 * S13
 

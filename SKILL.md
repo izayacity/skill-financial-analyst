@@ -38,11 +38,17 @@ pip install yfinance feedparser pandas pandas-ta requests --break-system-package
 ```
 financial-analysis/
 ├── SKILL.md                          # This file — main instructions
+├── data/                             # output results as local files
+│   ├── cache/                        # temporary local files
 ├── scripts/
 │   ├── api_config.py                 # API registry, keys, fallback chains
 │   ├── usage_tracker.py              # Rate limit enforcement, logging, reports
 │   ├── api_caller.py                 # Resilient caller with auto-fallback
 │   └── rss_feeds.py                  # RSS feed catalog and parser
+├── persist/
+│   ├── persist_facotry.py             # define interfaces to interact with outside code 
+│   ├── parquet_helper.py              # save or read data from local parquet files
+│   ├── jsonl_helper.py                # save or read data from local JSONL files
 └── references/
     └── api_setup_guide.md            # Step-by-step key setup + rate limits
 ```
